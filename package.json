@@ -1,5 +1,5 @@
 {
-  "name": "tm",
+  "name": "so-you-have-been-dating-how-long",
   "version": "0.0.0",
   "private": true,
   "repository": {
@@ -25,7 +25,7 @@
     "test": "eslint app/scripts && mocha",
     "build": "npm run prepare && npm run jade && npm run stylus && npm run js && npm run uglifyjs",
     "changelog": "conventional-changelog-generator && atom -w CHANGELOG.md",
-    "deploy": "gcloud-storage-upload -s 'tm' -p build",
+    "deploy": "node app/scripts/tools/deploy.js",
     "release": "echo 'Usage: npm run release:patch|minor|major'",
     "release:patch": "bumpery --verify='npm test' --no-push --no-commit --no-createTag --versionType patch && npm run changelog && npm run release:commit",
     "release:minor": "bumpery --verify='npm test' --no-push --no-commit --no-createTag --versionType minor && npm run changelog && npm run release:commit",
@@ -41,6 +41,7 @@
     "conventional-changelog-generator": "0.0.3",
     "eslint": "^1.5.1",
     "gcloud-storage-upload": "^0.1.0",
+    "gh-pages": "^0.4.0",
     "jade": "^1.11.0",
     "light-server": "^1.0.6",
     "mocha": "^2.3.3",
