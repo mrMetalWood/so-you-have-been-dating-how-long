@@ -12,9 +12,9 @@ class App {
     setInterval(() => {
       let diffMilliseconds = this.getDiffMilliseconds(this.startDate, moment()),
         durations = this.getDurations(diffMilliseconds),
-        output = this.buildOutput(durations);
+        content = this.buildOutput(durations);
 
-      this.updateView(output);
+      this.updateView(content);
     }, 1000);
   }
 
@@ -26,28 +26,28 @@ class App {
     let duration = moment.duration(milliseconds);
 
     return [
-      duration.years() > 0 ? `${duration.years()} Years` : null,
-      duration.months() > 0 ? `${duration.months()} Months` : null,
-      duration.days() > 0 ? `${duration.days()} Days` : null,
-      duration.hours() > 0 ? `${duration.hours()} Hours` : null,
-      duration.minutes() > 0 ? `${duration.minutes()} Minutes` : null,
-      `${duration.seconds()} Seconds`
+      duration.years() > 0 ? `${duration.years()}&nbsp;Years` : null,
+      duration.months() > 0 ? `${duration.months()}&nbsp;Months` : null,
+      duration.days() > 0 ? `${duration.days()}&nbsp;Days` : null,
+      duration.hours() > 0 ? `${duration.hours()}&nbsp;Hours` : null,
+      duration.minutes() > 0 ? `${duration.minutes()}&nbsp;Minutes` : null,
+      `${duration.seconds()}&nbsp;Seconds`
     ];
   }
 
   buildOutput(durations) {
-    let output = '';
+    let content = '';
     durations.forEach(duration => {
       if (duration) {
-        output += `${duration} `;
+        content += `<span class='duration'>${duration}</span> `;
       }
     });
 
-    return output;
+    return content;
   }
 
-  updateView(output) {
-    this.$forContainer.textContent = output;
+  updateView(content) {
+    this.$forContainer.innerHTML = content;
   }
 }
 
