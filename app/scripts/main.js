@@ -10,7 +10,9 @@ class App {
     this.$sinceContainer.textContent = this.startDate.format('MMMM Do YYYY');
 
     setInterval(() => {
-      let diffMilliseconds = this.getDiffMilliseconds(this.startDate, moment()),
+      let diffMilliseconds = this.getDiffMilliseconds(
+        this.startDate, moment().add(1, 'days')
+      ),
         durations = this.getDurations(diffMilliseconds),
         content = this.buildOutput(durations);
 
