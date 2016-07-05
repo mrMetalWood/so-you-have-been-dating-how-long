@@ -2,7 +2,7 @@ import moment from 'moment';
 
 class App {
   constructor() {
-    this.startDate = moment('2015-09-05 20:00');
+    this.startDate = moment('2015-09-05 16:00');
 
     this.$sinceContainer = document.querySelector('.value--since');
     this.$forContainer = document.querySelector('.value--for');
