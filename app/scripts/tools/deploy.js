@@ -1,6 +1,5 @@
-var ghpages = require('gh-pages'),
-  path = require('path');
+var ghpages = require('gh-pages');
 
-ghpages.publish(path.join('./', 'build'), function(error) {
+ghpages.publish('./build', function(error) {
   console.log(error); // eslint-disable-line
 });
