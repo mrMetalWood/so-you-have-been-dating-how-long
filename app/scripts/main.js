@@ -11,7 +11,7 @@ class App {
 
     setInterval(() => {
       let diffMilliseconds = this.getDiffMilliseconds(
-        this.startDate, moment().add(1, 'days')
+        this.startDate, moment().add(1, 'days') // 1 day for leap yeap 2016
       ),
         durations = this.getDurations(diffMilliseconds),
         content = this.buildOutput(durations);
