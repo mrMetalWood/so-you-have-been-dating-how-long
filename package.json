@@ -37,7 +37,7 @@
     "conventional-changelog-generator": "0.0.3",
     "eslint": "^1.5.1",
     "gcloud-storage-upload": "^0.1.0",
-    "gh-pages": "^0.4.0",
+    "gh-pages": "^1.1.0",
     "jade": "^1.11.0",
     "light-server": "^1.0.6",
     "mocha": "^2.3.3",
